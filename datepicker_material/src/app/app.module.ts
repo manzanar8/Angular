@@ -7,8 +7,23 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DateAdapter, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MomentDateAdapter} from '@angular/material-moment-adapter';
+/* import * as _moment from 'moment';
+
+const moment =  _moment */;
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'DD/MM/YYYY',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+}
 
 
 
@@ -22,12 +37,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    
   ],
   providers: [
-
+    {provide: DateAdapter, useClass: MomentDateAdapter},
+    {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
+    {provide: MAT_DATE_LOCALE, useValue: 'es-MX'}
   ],
   bootstrap: [AppComponent]
 })

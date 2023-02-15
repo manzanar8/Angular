@@ -19,11 +19,6 @@ export class AppComponent {
 
   title = 'datepicker_material';
 
-/*   range = new FormGroup({
-    start: new FormControl<Date | null>(null),
-    end: new FormControl<Date | null>(null),
-  }); */
-
   range = new FormGroup({
     start: new FormControl('', [
       Validators.required
@@ -33,6 +28,5 @@ export class AppComponent {
     ]),
   });
 
- 
 
 }

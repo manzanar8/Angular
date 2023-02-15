@@ -2,25 +2,78 @@
     <div>Angular</div>
     <div>Datepicker</div>
 </div>
-<div class="body">
 
-    <mat-form-field>
-        <mat-label>Introduce un rango de fechas:</mat-label>
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-            <input matStartDate formControlName="start" placeholder="Start date">
-            <input matEndDate formControlName="end" placeholder="End date">
-        </mat-date-range-input>
-        <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker touchUi="true"></mat-date-range-picker>
 
-        <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid') || range.controls.end.hasError('matEndDateInvalid')">Fecha Inválida</mat-error>
-        <mat-error *ngIf="range.controls.start.hasError('matDatepickerParse') || range.controls.end.hasError('matDatepickerParse')">Fecha Inválida</mat-error>
-        <mat-error *ngIf="range.controls.start.hasError('required') || range.controls.end.hasError('required')">Campo Requerido</mat-error>
+<div class="allbody">
 
-    </mat-form-field>
+    <div class="info">
+        <ul>
+            <li>
+                Para utilizar el datepicker en tu aplicación debes importar el modulo correspondiente:
+            </li>
+        </ul>
+        <pre>
+        import {{ '{' }}MatDatepickerModule'{{ '}' }} 'from '@angular/material/datepicker';
+    </pre> dentro de tu app.module.ts:
+        <br>
+        <pre>
+            imports: [  
+             MatFormFieldModule,
+             <strong>MatDatepickerModule</strong>
+             BrowserModule,
+             BrowserAnimationsModule,
+             FormsModule,
+             MatNativeDateModule,
+             ReactiveFormsModule,
+            ],
+        </pre>
 
-    <p>Valores Seleccionados: {{range.value | json}}</p>
-    {{range.get('start')?.errors | json}}
+
+        <!--   <ul>
+            <li>Para establecer fecha máxima y mínima:</li>
+        </ul> -->
+
+        <ul>
+            <li>Para mensaje de campo requerido:</li>
+        </ul>
+
+        Agregar a tu campo en el ts:
+        <pre>
+    range = new FormGroup({{ '{' }}
+        start: new FormControl('', [
+          <strong>Validators.required</strong>
+        ]),
+        end: new FormControl('', [
+          <strong>Validators.required</strong>
+        ]),
+        {{ '}' }});
+        </pre>
+        <p>Y en el .html definir tu mensaje con su validación:</p>
+        <pre>
+        &lt;mat-error *ngIf="range.controls.start.hasError('required') || range.controls.end.hasError('required')"&gt;Campo Requerido&lt;/mat-error&gt;
+        </pre>
+    </div>
+    <div class="body">
+
+        <mat-form-field>
+            <mat-label>Introduce un rango de fechas:</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                <input matStartDate formControlName="start" placeholder="Start date">
+                <input matEndDate formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker touchUi="true"></mat-date-range-picker>
+
+            <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid') || range.controls.end.hasError('matEndDateInvalid')">Fecha Inválida</mat-error>
+            <mat-error *ngIf="range.controls.start.hasError('matDatepickerParse') || range.controls.end.hasError('matDatepickerParse')">Fecha Inválida</mat-error>
+            <mat-error *ngIf="range.controls.start.hasError('required') || range.controls.end.hasError('required')">Campo Requerido</mat-error>
+
+        </mat-form-field>
+
+        <p>Valor Seleccionado Inicio: {{range.value.start | json}}</p>
+        <p>Valor Seleccionado Fin: {{range.value.end | json}}</p>
+    </div>
+
 
 </div>

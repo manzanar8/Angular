@@ -20,10 +20,35 @@ body {
     padding: 5px;
 }
 
+.allbody {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .body {
     margin: 20px;
     border: 1px dashed #3f51b5;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    max-width: 100%;
+    width: 50%;
+    padding: 2em;
+    height: 25em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background: #e3e3e3;
+    margin: 2em;
+}
+
+pre {
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
 }

@@ -1,14 +1,17 @@
 # DatepickerMaterial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Instalaciones
+## Instalaciones utilizadas
 
-- angular material
--npm i @angular/material-moment-adapter
+### Angular Material
+- ng add @angular/material
+
+### Moment (Para Fechas)
+- npm i @angular/material-moment-adapter
 - npm i moment
 

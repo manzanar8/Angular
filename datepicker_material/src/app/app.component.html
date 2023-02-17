@@ -1,4 +1,8 @@
 <div class="header">
+    <div>
+        <img width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+        />
+    </div>
     <div>Angular</div>
     <div>Datepicker</div>
 </div>
@@ -12,9 +16,9 @@
                 Para utilizar el datepicker en tu aplicación debes importar el modulo correspondiente:
             </li>
         </ul>
-        <pre>
+        <code>
         import {{ '{' }}MatDatepickerModule'{{ '}' }} 'from '@angular/material/datepicker';
-    </pre> dentro de tu app.module.ts:
+        </code> dentro de tu app.module.ts:
         <br>
         <pre>
             imports: [  
@@ -29,10 +33,26 @@
         </pre>
 
 
-        <!--   <ul>
+        <ul>
             <li>Para establecer fecha máxima y mínima:</li>
-        </ul> -->
+        </ul>
 
+        <pre>
+
+            //En el .ts que estas trabajando
+            public minDate;
+            public maxDate;
+            constructor() {{ '{' }}
+        
+            let dd = String(new Date().getDate()).padStart(2,'0');
+            let mm = String(new Date().getMonth()).padStart(2,'0');
+            let yyyy = new Date().getFullYear();
+            // En minDate se setea el año actual,mes actual y del día actual -(5 dias)
+            this.minDate = new Date(yyyy,parseInt(mm)-1,parseInt(dd)-5);
+            this.maxDate = new Date(yyyy,parseInt(mm)-1,parseInt(dd));
+        
+            {{ '}' }}
+        </pre>
         <ul>
             <li>Para mensaje de campo requerido:</li>
         </ul>
@@ -49,15 +69,15 @@
         {{ '}' }});
         </pre>
         <p>Y en el .html definir tu mensaje con su validación:</p>
-        <pre>
+        <code>
         &lt;mat-error *ngIf="range.controls.start.hasError('required') || range.controls.end.hasError('required')"&gt;Campo Requerido&lt;/mat-error&gt;
-        </pre>
+        </code>
     </div>
     <div class="body">
 
         <mat-form-field>
             <mat-label>Introduce un rango de fechas:</mat-label>
-            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker" [min]="minDate" [max]="maxDate">
                 <input matStartDate formControlName="start" placeholder="Start date">
                 <input matEndDate formControlName="end" placeholder="End date">
             </mat-date-range-input>
@@ -73,6 +93,11 @@
 
         <p>Valor Seleccionado Inicio: {{range.value.start | json}}</p>
         <p>Valor Seleccionado Fin: {{range.value.end | json}}</p>
+
+
+
+        <!--         <input matInput (keyup)="test($event)" [formControl]="cp" maxlength="5">
+ -->
     </div>
 
 

@@ -18,5 +18,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ### Ejemplo
 
-![alt tag](https://github.com/manzanar8/?raw=true) 
+![alt tag](https://github.com/manzanar8/Angular/blob/main/datepicker_material/datepicker%20material.png?raw=true) 
 

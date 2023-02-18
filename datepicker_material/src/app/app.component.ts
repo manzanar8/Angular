@@ -1,3 +1,13 @@
+/*
+ * Created on 17/2/2023
+ *
+ * Copyright (c) Ana Manzanor
+ *
+ * Description: Proyectos Angular
+ *
+ * By: Ana Manzano 
+ */
+
 import { Component , Inject } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 

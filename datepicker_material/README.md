@@ -20,3 +20,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![alt tag](https://github.com/manzanar8/?raw=true) 
 
+## Autores ✒️
+
+* **Ana Manzano** - *Trabajo Inicial* - [manzanar8](https://github.com/manzanar8)

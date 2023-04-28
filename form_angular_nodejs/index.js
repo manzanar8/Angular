@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+/* const { Router } = require('express');
+const router = Router(); */
 const app = express();
 const mysql = require("mysql");
 
@@ -7,6 +9,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
 
+//router.post('login', (req, res)=>{}); module.exports={router}
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -85,7 +88,9 @@ app.put('/updateData/:id', (req, res) => {
 
 
 
-
+app.use('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+});
 
 
 

@@ -1,4 +1,4 @@
-# DatepickerMaterial
+# DatepickerMaterial  de Angular Material
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
@@ -11,11 +11,11 @@ Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The ap
 ## Instalaciones utilizadas
 
 ### Angular Material
-- ng add @angular/material
+    ng add @angular/material
 
 ### Moment (Para Fechas)
-- npm i @angular/material-moment-adapter
-- npm i moment
+    npm i @angular/material-moment-adapter
+    npm i moment
 
 
 ### Ejemplo

@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style=" border-radius: 5px;border: 1px solid #ebebeb;background: #f9f9f9;margin-top: 1em;margin-bottom: 1em; ">
+            <form [formGroup]="searchForm" (ngSubmit)="search()">
+                <div class="form-group">
+                    <label for="buscar">Buscar por:</label>
+                    <select class="form-control" id="buscar" formControlName="option" (change)="reset()">
+                  <option value="1">Id</option>
+                  <option value="2">Nombre</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label for="id">{{(searchForm.get('option')?.value==1)?'Id:':'Nombre:'}}</label>
+                    <input type="text" class="form-control" id="id" placeholder="" formControlName="valueF">
+                </div>
+                <div style="text-align: right;" class="m-2">
+                    <button type="submit" class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="object!=null">
+        <div class="col-md-12 p-0">
+            <div class="jumbotron jumbotron-fluid" style="padding:10px !important">
+                <div class="container">
+                    <div style="text-align: right" class="m-2">
+                        <button type="button" class="btn btn-info m-1" (click)="download()"><i class="fa-solid fa-download"></i>&nbsp;Descargar</button>
+                    </div>
+                    <div style="background-color: white;" class="p-2">
+
+                        <div>
+                            <p class="subtitleP">Información Personal</p>
+                            <p class="size20"><strong>Nombre:</strong> {{object?.nombre | titlecase}} {{object?.paterno| titlecase}} {{object?.materno| titlecase}}</p>
+                            <p class="size20"><strong>Fecha de Nacimiento:</strong> {{object?.nacimiento}}</p>
+                            <p class="size20"><strong>Genero:</strong> {{object?.genero?.nombre}}</p>
+                            <p class="size20"><strong>Nacionalidad</strong>: {{object?.nacionalidad?.nombre}}</p>
+                            <p class="size20"><strong>Club de Futbol:</strong> {{object?.club?.nombre}}</p>
+                            <p class="size20"><strong>Ocupación:</strong> {{object?.ocupacion | titlecase}}</p>
+                        </div>
+                        <div>
+                            <p class="subtitleP">Generales</p>
+                            <p *ngIf="object?.esMayor" class="size20"><strong>RFC:</strong> {{object?.rfc}}</p>
+                            <p class="size20"><strong>Calle:</strong> {{object?.calle}}</p>
+                            <p class="size20"><strong>Número:</strong> {{object?.numero}}</p>
+                            <p class="size20"><strong>Colonia:</strong> {{object?.colonia}}</p>
+                            <p class="size20"><strong>Código Postal:</strong> {{object?.cp}}</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="exist==false">
+        <div class="alert alert-warning" role="alert">
+            Sin resultados
+        </div>
+    </div>
+</div>

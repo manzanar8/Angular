@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-8" style="margin-top:20px">
+        <form [formGroup]="formStep1">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="" formControlName="nombre">
+            </div>
+            <div class="form-group">
+                <label for="apaterno">Apellido Paterno</label>
+                <input type="text" class="form-control" id="apaterno" placeholder="" formControlName="paterno">
+            </div>
+            <div class="form-group">
+                <label for="amaterno">Apellido Materno</label>
+                <input type="text" class="form-control" id="amaterno" placeholder="" formControlName="materno">
+            </div>
+            <div class="form-group">
+                <label for="fecn">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fecn" placeholder="" formControlName="nacimiento" (change)="validaEdad(formStep1.get('nacimiento')?.value)">
+            </div>
+            <div class="form-group">
+                <label for="genero">Genero</label>
+                <select class="form-control" id="genero" formControlName="genero">
+                          <option *ngFor="let item of generos" [value]="item.id">{{ item.nombre }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nacionalidad">Nacionalidad</label>
+                <select class="form-control" id="nacionalidad" formControlName="nacionalidad">
+                          <option *ngFor="let item of nacionalidades" [value]="item.id">{{ item.nombre }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="club">Club de Futbol</label>
+                <select class="form-control" id="club" formControlName="club">
+                          <option *ngFor="let item of clubs" [value]="item.id">{{ item.nombre }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ocupacion">Ocupación</label>
+                <input type="text" class="form-control" id="ocupacion" placeholder="" formControlName="ocupacion">
+            </div>
+
+
+        </form>
+
+    </div>
+    <div class="col-md-2">&nbsp;</div>
+
+</div>

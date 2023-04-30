@@ -3,18 +3,18 @@
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18
 
-Angular CLI: 12.2.18
-Node: 14.17.6
-Package Manager: npm 6.14.15
-OS: win32 x64
+    Angular CLI: 12.2.18
+    Node: 14.17.6
+    Package Manager: npm 6.14.15
+    OS: win32 x64
 
-@angular-devkit/build-angular   12.2.18
-@angular-devkit/core            12.2.18
-@angular-devkit/schematics      12.2.18
-@angular/cli                    12.2.18
-@schematics/angular             12.2.18
-rxjs                            6.6.7
-typescript                      4.3.5
+    @angular-devkit/build-angular   12.2.18
+    @angular-devkit/core            12.2.18
+    @angular-devkit/schematics      12.2.18
+    @angular/cli                    12.2.18
+    @schematics/angular             12.2.18
+    rxjs                            6.6.7
+    typescript                      4.3.5
 
 
 
@@ -48,8 +48,10 @@ Este proyecto consiste en un formulario donde tiene las siguientes validaciones:
 
 ### Ejemplo
 
-![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/datepicker_material/imgHome.png?raw=true) 
-![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/datepicker_material/imgBusqueda.png?raw=true) 
+![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/pruebaFMF/fmfAngular/imgHome.png?raw=true) 
+![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/pruebaFMF/fmfAngular/imgBusqueda.png?raw=true) 
+
+
 
 ## Autores ✒️
 

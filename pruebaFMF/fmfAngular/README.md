@@ -48,9 +48,8 @@ Este proyecto consiste en un formulario donde tiene las siguientes validaciones:
 
 ### Ejemplo
 
-![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/pruebaFMF/fmfAngular/imgHome.png?raw=true) 
-![alt tag](https://github.com/manzanar8/fmfAngular/blob/main/pruebaFMF/fmfAngular/imgBusqueda.png?raw=true) 
-
+![alt tag](https://github.com/manzanar8/Angular/blob/main/pruebaFMF/fmfAngular/imgHome.png?raw=true) 
+![alt tag](https://github.com/manzanar8/Angular/blob/main/pruebaFMF/fmfAngular/imgBusqueda.png?raw=true) 
 
 
 ## Autores ✒️

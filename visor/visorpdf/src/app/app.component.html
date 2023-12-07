@@ -1,0 +1,13 @@
+
+<div class="pdf-toolbar">
+  <button (click)="zoomIn()">Zoom In</button>
+  <button (click)="zoomOut()">Zoom Out</button>
+  <button (click)="prevPage()">Previous Page</button>
+  <button (click)="nextPage()">Next Page</button>
+</div>
+<div>Total de páginas: {{currentPage }} de {{ totalPages }}</div>
+
+ <div style="height: 100px;">
+  visor555
+  <canvas id="pdfCanvas"></canvas>
+</div> 
